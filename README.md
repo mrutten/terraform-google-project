@@ -54,15 +54,19 @@ Any group that needs to login to Compute Engine over SSH, needs the following or
 
 - Compute OS Login External User
 
+
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | 5.2.0 |
 
 ## Providers
 
-| Name                                                       | Version |
-| ---------------------------------------------------------- | ------- |
-| <a name="provider_google"></a> [google](#provider\_google) | n/a     |
+| Name | Version |
+|------|---------|
+| <a name="provider_google"></a> [google](#provider\_google) | 5.2.0 |
 
 ## Modules
 
@@ -70,26 +74,26 @@ No modules.
 
 ## Resources
 
-| Name                                                                                                                                                               | Type     |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
-| [google_project.project](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project)                                                   | resource |
-| [google_project_default_service_accounts.default](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_default_service_accounts) | resource |
-| [google_project_iam_member.terraform](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member)                           | resource |
+| Name | Type |
+|------|------|
+| [google_project.project](https://registry.terraform.io/providers/hashicorp/google/5.2.0/docs/resources/project) | resource |
+| [google_project_default_service_accounts.default](https://registry.terraform.io/providers/hashicorp/google/5.2.0/docs/resources/project_default_service_accounts) | resource |
+| [google_project_iam_member.terraform](https://registry.terraform.io/providers/hashicorp/google/5.2.0/docs/resources/project_iam_member) | resource |
 
 ## Inputs
 
-| Name                                                                              | Description                                   | Type                                                                                                       | Default | Required |
-| --------------------------------------------------------------------------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ------- | :------: |
-| <a name="input_billing_account"></a> [billing\_account](#input\_billing\_account) | The ID of the billing account.                | `string`                                                                                                   | n/a     |   yes    |
-| <a name="input_member"></a> [member](#input\_member)                              | The member that will run Terraform manifests. | `string`                                                                                                   | n/a     |   yes    |
-| <a name="input_org_id"></a> [org\_id](#input\_org\_id)                            | The ID of the organisation.                   | `number`                                                                                                   | n/a     |   yes    |
-| <a name="input_projects"></a> [projects](#input\_projects)                        | The projects to create.                       | <pre>map(object({<br>    project_name = string<br>    folder_id    = optional(string, null)<br>  }))</pre> | n/a     |   yes    |
-| <a name="input_role"></a> [role](#input\_role)                                    | The role to assign to the Terraform user.     | `string`                                                                                                   | n/a     |   yes    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_billing_account"></a> [billing\_account](#input\_billing\_account) | The ID of the billing account. | `string` | n/a | yes |
+| <a name="input_member"></a> [member](#input\_member) | The member that will run Terraform manifests. | `string` | n/a | yes |
+| <a name="input_org_id"></a> [org\_id](#input\_org\_id) | The ID of the organisation. | `number` | n/a | yes |
+| <a name="input_projects"></a> [projects](#input\_projects) | The projects to create. | <pre>map(object({<br>    project_name = string<br>    folder_id    = optional(string, null)<br>  }))</pre> | n/a | yes |
+| <a name="input_role"></a> [role](#input\_role) | The role to assign to the Terraform user. | `string` | n/a | yes |
 
 ## Outputs
 
-| Name                                                                                | Description                            |
-| ----------------------------------------------------------------------------------- | -------------------------------------- |
-| <a name="output_folder_ids"></a> [folder\_ids](#output\_folder\_ids)                | The project folder.                    |
-| <a name="output_project_ids"></a> [project\_ids](#output\_project\_ids)             | The project IDs.                       |
+| Name | Description |
+|------|-------------|
+| <a name="output_folder_ids"></a> [folder\_ids](#output\_folder\_ids) | The project folder. |
+| <a name="output_project_ids"></a> [project\_ids](#output\_project\_ids) | The project IDs. |
 | <a name="output_project_numbers"></a> [project\_numbers](#output\_project\_numbers) | The numeric identifier of the project. |
