@@ -16,6 +16,7 @@ resource "google_project" "project" {
 	Default service account configuration
  *****************************************/
 resource "google_project_default_service_accounts" "default" {
-  project = google_project.project.project_id
-  action  = "DISABLE"
+  for_each = var.projects
+  project  = google_project.project[each.key].project_id
+  action   = "DISABLE"
 }
