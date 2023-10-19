@@ -20,3 +20,13 @@ resource "google_project_default_service_accounts" "default" {
   project  = google_project.project[each.key].project_id
   action   = "DISABLE"
 }
+
+/******************************************
+	Terraform account configuration
+ *****************************************/
+resource "google_project_iam_member" "terraform" {
+  for_each = var.projects
+  project  = google_project.project[each.key].project_id
+  member   = var.member
+  role     = var.role
+}
