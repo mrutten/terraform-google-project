@@ -14,8 +14,3 @@ variable "projects" {
     folder_id    = optional(string, null)
   }))
 }
-
-variable "project_ids" {
-  description = "The ID of the projects."
-  type        = set(string)
-}
